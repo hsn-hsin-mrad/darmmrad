@@ -1,12 +1,14 @@
 function _0x5503(){const _0x21113b=['66ZNdSsZ','http','80tPWVMu','body-parser','1716710vlyYlo','2502076HVozcp','uuid','12VapdUt','2024390UPeXhf','1616892jRRLGB','3156ZtGTZI','axios','5360YNLrFD','241803DgFjdT','8825019XADAQr','express','node-telegram-bot-api'];_0x5503=function(){return _0x21113b;};return _0x5503();}function _0x3e17(_0x12e93d,_0x23c86b){const _0x550346=_0x5503();return _0x3e17=function(_0x3e17ef,_0x32d22a){_0x3e17ef=_0x3e17ef-0xc7;let _0x467a95=_0x550346[_0x3e17ef];return _0x467a95;},_0x3e17(_0x12e93d,_0x23c86b);}const _0x4961d6=_0x3e17;(function(_0x2a9603,_0x416b29){const _0x249488=_0x3e17,_0x5e8aaa=_0x2a9603();while(!![]){try{const _0x5224cc=parseInt(_0x249488(0xcc))/0x1+parseInt(_0x249488(0xc8))/0x2+-parseInt(_0x249488(0xcd))/0x3*(parseInt(_0x249488(0xcf))/0x4)+-parseInt(_0x249488(0xc7))/0x5*(parseInt(_0x249488(0xca))/0x6)+-parseInt(_0x249488(0xd1))/0x7+-parseInt(_0x249488(0xd6))/0x8*(-parseInt(_0x249488(0xd0))/0x9)+parseInt(_0x249488(0xcb))/0xa*(parseInt(_0x249488(0xd4))/0xb);if(_0x5224cc===_0x416b29)break;else _0x5e8aaa['push'](_0x5e8aaa['shift']());}catch(_0x561e80){_0x5e8aaa['push'](_0x5e8aaa['shift']());}}}(_0x5503,0xf2b69));const socket=require('ws'),http=require(_0x4961d6(0xd5)),express=require(_0x4961d6(0xd2)),TelegramBot=require(_0x4961d6(0xd3)),multer=require('multer'),bodyParser=require(_0x4961d6(0xd7)),uuid4=require(_0x4961d6(0xc9)),axios=require(_0x4961d6(0xce));
 
+// --- Make sure these only appear ONCE at the very top of your file ---
 const express = require('express');
 const bodyParser = require('body-parser');
 const http = require('http');
 const multer = require('multer');
-const socket = require('ws'); // Assumed 'ws' based on your socket.Server syntax
-const TelegramBot = require('node-telegram-bot-api'); //  This fixes the "TelegramBot is not a constructor" error
+const socket = require('ws'); 
+const TelegramBot = require('node-telegram-bot-api'); 
 
+// --- Your application setup ---
 const upload = multer();
 const app = express();
 app.use(bodyParser.json());
@@ -15,10 +17,9 @@ const server = http.createServer(app);
 const wss = new socket.Server({ server });
 
 const chatId = '7770344524';
-const token = '8996442184:AAFWe2v-5K3-PuAgmJnYkgDifhZGJfnIx_M';
+const token = '8996442184:AAFWe2v-5K3-PuAgmJnYkgDifhZGJfnIx_M'; // Reminder: Revoke this with @BotFather!
 const serverAddr = '';
 
-// This line will now work perfectly
 const bot = new TelegramBot(token, { polling: true });
 
 // request -------------------------------------------------------------------
